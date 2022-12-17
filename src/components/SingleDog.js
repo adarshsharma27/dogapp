@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import Loader from "./Loader";
 const SingleDog = () => {
   const { name } = useParams();
   const dispatch = useDispatch();
@@ -17,10 +18,11 @@ const SingleDog = () => {
       <section>
         <section>
           <div class="container h-100 w-100 py-4 mx-auto">
-            <div
+          {loading ?  <Loader /> : <div
               class="row h-100 m-0 p-0 my-2 w-100 align-items-center py-4 "
               id="details"
             >
+           
               <div class="col-md-6 order-md-2 order-2 text-md-start text-center py-4 px-4 ">
                 <h4 class="font-weight-light animation">
                   <b>{dog[0]?.name}</b>
@@ -62,7 +64,8 @@ const SingleDog = () => {
                   class="img-fluid"
                 />
               </div>
-            </div>
+            </div> }
+            
           </div>
         </section>
       </section>
