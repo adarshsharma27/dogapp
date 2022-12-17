@@ -202,4 +202,7 @@ a:hover {
   .w-50 {
     width: 80% !important;
   }
+  #details .fas.fa-chevron-left {
+    top: 0.3rem;
+  }
 }
